@@ -1,0 +1,21 @@
+<div class="row">
+  <% @todos.each do |t| %>
+
+    <div class= "well" "col-md-6">
+
+      <h5> <%= link_to "Mostrar", todo_path(t) %>  </h5> |
+      <%= link_to 'Editar',  edit_path(t) %> |
+
+      <%= link_to 'Borrar', t, method: :delete %>
+      <p> Nombre Tarea:  <%= t.description %> </p>
+
+      <p> ¿Tarea Resuelta?:  <%= t.completed %> </p>
+      <p class = 'btn btn-primary' action = "<%= complete_path(t) %>"  > Tarea Completada  </p>
+
+    </div>
+  <% end %>
+  <div class="col-md-6">
+    <%= link_to 'Crear Nueva tarea', todos_new_path %>  |
+  </div>
+
+</div>

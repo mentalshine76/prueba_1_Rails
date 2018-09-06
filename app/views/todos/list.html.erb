@@ -1,0 +1,15 @@
+
+
+<% @todos.each do |t| %>
+  <% if t.completed? %>
+    <div class=  "col-md-6" "well">
+      <h2> Has completado esta tareas: </h2>
+         <%= t.description %>
+    </div>
+  <%else%>
+    <div class= "col-md-6" "well" >
+      <h2> Tarea por completar: </h2>
+         <%= t.description %>
+    </div>
+  <% end %>
+<% end %>
